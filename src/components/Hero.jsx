@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -13,6 +13,7 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Hero() {
   const { t } = useLanguage()
+  const [service, setService] = useState('')
   return (
     <header id="home" className="relative min-h-[800px] flex items-center pt-24 pb-12 overflow-hidden">
       {/* Background */}
@@ -88,30 +89,47 @@ export default function Hero() {
                 {t('formTitle').includes('Free') ? 'FREE ESTIMATE' : 'PRESUPUESTO GRATIS'}
               </p>
 
-              <form className="space-y-4">
+              <form
+                name="estimate"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                className="space-y-4"
+              >
+                <input type="hidden" name="form-name" value="estimate" />
+                <p className="hidden">
+                  <label>Don’t fill this out: <input name="bot-field" /></label>
+                </p>
                 <div>
                   <Input
+                    name="name"
                     type="text"
+                    required
                     placeholder={t('formNameLabel')}
                     className="h-11 rounded-lg border-gray-200 text-sm"
                   />
                 </div>
                 <div>
                   <Input
+                    name="phone"
                     type="tel"
+                    required
                     placeholder={t('formPhoneLabel')}
                     className="h-11 rounded-lg border-gray-200 text-sm"
                   />
                 </div>
                 <div>
                   <Input
+                    name="email"
                     type="email"
+                    required
                     placeholder={t('formEmailLabel')}
                     className="h-11 rounded-lg border-gray-200 text-sm"
                   />
                 </div>
                 <div>
-                  <Select>
+                  <input type="hidden" name="service" value={service} />
+                  <Select value={service} onValueChange={setService}>
                     <SelectTrigger className="h-11 rounded-lg border-gray-200 text-sm text-gray-500">
                       <SelectValue placeholder={t('formServicePlaceholder')} />
                     </SelectTrigger>
