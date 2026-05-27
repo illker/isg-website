@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left column */}
           <div>
-            <p className="text-xs font-bold text-white/70 uppercase tracking-widest mb-5">
+            <p className="text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
               {t('heroOverline')}
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-black font-headline leading-[1.15] mb-6">
