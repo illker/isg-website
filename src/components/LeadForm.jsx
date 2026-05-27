@@ -39,7 +39,7 @@ export default function LeadForm() {
               <Mail className="w-5 h-5 text-[#3BA8DF]" />
             </div>
             <h3 className="font-bold text-[#0d2240]">{t('formEmailLabel')}</h3>
-            <p className="text-slate-600">info@isggutters.com</p>
+            <a href="mailto:info@integralsolutionsgutters.com" className="text-slate-600 hover:text-[#3BA8DF] transition-colors text-sm break-all">info@integralsolutionsgutters.com</a>
           </div>
           <div className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl shadow-sm">
             <div className="w-12 h-12 bg-[#3BA8DF]/10 rounded-full flex items-center justify-center">
@@ -49,11 +49,22 @@ export default function LeadForm() {
             <p className="text-slate-600">{t('formHours').split(': ').slice(1).join(': ')}</p>
           </div>
         </div>
-        <div className="mt-8 flex flex-col items-center gap-3 p-6 bg-white rounded-2xl shadow-sm max-w-md mx-auto">
-          <div className="w-12 h-12 bg-[#3BA8DF]/10 rounded-full flex items-center justify-center">
-            <MapPin className="w-5 h-5 text-[#3BA8DF]" />
+        {/* Map */}
+        <div className="mt-10 rounded-2xl overflow-hidden shadow-md border border-slate-100">
+          <div className="flex items-center gap-2 px-5 py-3 bg-white border-b border-slate-100">
+            <MapPin className="w-4 h-4 text-[#3BA8DF]" />
+            <span className="text-sm font-bold text-[#0d2240]">{t('footerLocation')}</span>
           </div>
-          <h3 className="font-bold text-[#0d2240]">{t('footerLocation')}</h3>
+          <iframe
+            title="Integral Solutions Gutters - South Florida"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449692.60123081755!2d-80.49942!3d26.1224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b4fd7b09e723%3A0xf5ed1f2b97f1d9fe!2sBroward%20County%2C%20FL!5e0!3m2!1sen!2sus!4v1716000000000"
+            width="100%"
+            height="380"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>

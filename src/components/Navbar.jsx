@@ -5,10 +5,10 @@ import logo from '../assets/integral-solutions-gutters-logo-horizontal.png'
 export default function Navbar() {
   const { t, lang, setLang, toggleLang } = useLanguage()
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-sm dark:bg-slate-900/80 dark:shadow-none">
       <div className="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
-        <div className="flex items-center h-[83px] w-[220px]">
-          <img src={logo} alt="ISP Gutters" className="h-full w-full object-contain" />
+        <div className="flex items-center h-[95px] w-[250px]">
+          <img src={logo} alt="Integral Solutions Gutters" className="h-full w-full object-contain" />
         </div>
         <div className="hidden md:flex items-center gap-8">
           <a className="text-blue-900 dark:text-blue-300 font-bold hover:text-blue-700 transition-colors duration-200 font-label" href="#home">{t('navHome')}</a>

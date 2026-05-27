@@ -6,7 +6,8 @@ import ProcessSteps from './components/ProcessSteps'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
 import MobileNav from './components/MobileNav'
-import FloatingSocial from './components/FloatingSocial'
+import AboutUs from './components/AboutUs'
+import Gallery from './components/Gallery'
 
 export default function App() {
   return (
@@ -14,11 +15,12 @@ export default function App() {
       <Navbar />
       <Hero />
       <Services />
+      <Gallery />
+      <AboutUs />
       <ProcessSteps />
       <LeadForm />
       <Footer />
       <MobileNav />
-      <FloatingSocial />
     </LanguageProvider>
   )
 }

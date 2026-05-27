@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import bg1 from '../assets/isg-bg1.png'
+import bg2 from '../assets/isg-bg2.png'
+import bg3 from '../assets/isg-bg3.png'
+import bg4 from '../assets/isg-bg4.png'
+import bg5 from '../assets/isg-bg5.png'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -8,25 +13,80 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Phone, ShieldCheck, Zap, BadgeCheck, Lock, CalendarDays } from 'lucide-react'
+import { Phone, ShieldCheck, Zap, BadgeCheck, Lock, CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+
+const SLIDES = [bg1, bg2, bg3, bg4, bg5]
+const INTERVAL = 5000
 
 export default function Hero() {
   const { t } = useLanguage()
   const [service, setService] = useState('')
+  const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length), [])
+  const next = useCallback(() => setCurrent((c) => (c + 1) % SLIDES.length), [])
+
+  useEffect(() => {
+    if (paused) return
+    const id = setInterval(next, INTERVAL)
+    return () => clearInterval(id)
+  }, [paused, next])
+
   return (
-    <header id="home" className="relative min-h-[800px] flex items-center pt-24 pb-12 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          className="w-full h-full object-cover"
-          alt="Modern suburban home with pristine seamless dark gutters"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAljqBREt8AuCSOg0g49sJm1O9RAKgdXso4FDywmAARwJXqFiwsaRKMlSIMcFPYokvuWHxtg347OrvqnD0pLP_OcvsDrIllYM4GHWuqTyZMFkywgv3ByXBpgI4OmSiwEc03CnNlNHrB-lQsZ7T6LyVj2IrMSCJpo0PfBT3Kev-kZO0_yyJaEejGP1iRzEbIgy_CCn1jC9qmucpm3JAMhcDF4IhHHE7FyHYpaxevcrvXGgq2XVClPDEu-1Ml9Yw7M1pRYQkCMbWiVi2A"
-        />
-        <div className="absolute inset-0 bg-[#0d2240]/85" />
+    <header id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      {/* Background Slideshow */}
+      <div
+        className="absolute inset-0 z-0"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {SLIDES.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0 }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-[#0d2240]/80" />
+
+        {/* Prev / Next */}
+        <button
+          onClick={prev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-colors"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Slide ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? 'w-6 h-2.5 bg-[#3BA8DF]'
+                  : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/70'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-8 xl:px-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left column */}
           <div>
@@ -37,7 +97,7 @@ export default function Hero() {
               <span className="text-white block">{t('heroTitleWhite')}</span>
               <span className="text-[#3BA8DF] block">{t('heroTitleBlue')}</span>
             </h1>
-            <p className="text-base text-white/80 mb-8 leading-relaxed max-w-md">
+            <p className="text-base text-white/80 mb-8 leading-relaxed max-w-xl">
               {t('heroSubtitle')}
             </p>
 

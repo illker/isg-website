@@ -1,28 +1,36 @@
 import { useState } from 'react'
 import { ClipboardList, Shield, Wrench, Droplets, Users, Hammer, ShieldCheck, Check, ArrowRight } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import imgInstall from '../assets/gutters 6 pulgadas/ChatGPT Image 26 may 2026, 10_18_20.png'
+import imgGuard from '../assets/Leaf guard/ChatGPT Image 26 may 2026, 10_58_11.png'
+import imgRepair from '../assets/Cooper gutters/07.png'
+import imgClean from '../assets/Limpieza de gutters/ChatGPT Image 26 may 2026, 11_17_52.png'
 
 const servicesConfig = [
   {
     icon: ClipboardList,
+    img: imgInstall,
     titleKey: 'svcInstallTitle',
     descKey: 'svcInstallDesc',
     itemKeys: ['svcInstall1', 'svcInstall2', 'svcInstall3', 'svcInstall4'],
   },
   {
     icon: Shield,
+    img: imgGuard,
     titleKey: 'svcGuardTitle',
     descKey: 'svcGuardDesc',
     itemKeys: ['svcGuard1', 'svcGuard2', 'svcGuard3', 'svcGuard4'],
   },
   {
     icon: Wrench,
+    img: imgRepair,
     titleKey: 'svcRepairTitle',
     descKey: 'svcRepairDesc',
     itemKeys: ['svcRepair1', 'svcRepair2', 'svcRepair3', 'svcRepair4'],
   },
   {
     icon: Droplets,
+    img: imgClean,
     titleKey: 'svcCleanTitle',
     descKey: 'svcCleanDesc',
     itemKeys: ['svcClean1', 'svcClean2', 'svcClean3', 'svcClean4'],
@@ -35,7 +43,7 @@ const featuresConfig = [
   { icon: ShieldCheck, titleKey: 'whyWarrantyTitle', descKey: 'whyWarrantyDesc' },
 ]
 
-function FlipCard({ icon: Icon, titleKey, descKey, itemKeys, t }) {
+function FlipCard({ icon: Icon, img, titleKey, descKey, itemKeys, t }) {
   const [flipped, setFlipped] = useState(false)
 
   const toggle = () => setFlipped((v) => !v)
@@ -55,13 +63,17 @@ function FlipCard({ icon: Icon, titleKey, descKey, itemKeys, t }) {
       >
         {/* FRONT */}
         <div
-          className="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer"
+          className="flex flex-col items-center text-center bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 cursor-pointer"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <div className="w-24 h-24 rounded-full border-2 border-[#3BA8DF] flex items-center justify-center mb-5">
-            <Icon className="w-11 h-11 text-[#3BA8DF]" strokeWidth={1.5} />
+          <div className="w-full h-44 overflow-hidden">
+            <img src={img} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
-          <h3 className="text-lg font-black text-[#0d2240] font-headline uppercase tracking-wide mb-5">
+          <div className="p-6 flex flex-col items-center w-full">
+          <div className="w-14 h-14 -mt-10 rounded-full border-2 border-[#3BA8DF] bg-white flex items-center justify-center mb-4 shadow-md">
+            <Icon className="w-7 h-7 text-[#3BA8DF]" strokeWidth={1.5} />
+          </div>
+          <h3 className="text-lg font-black text-[#0d2240] font-headline uppercase tracking-wide mb-4">
             {t(titleKey)}
           </h3>
           <ul className="space-y-3 text-left w-full">
@@ -76,6 +88,7 @@ function FlipCard({ icon: Icon, titleKey, descKey, itemKeys, t }) {
           </ul>
           <div className="mt-5 text-xs text-slate-400 font-medium uppercase tracking-wider">
             {t('heroCall') === 'Call Now' ? 'Click to learn more' : 'Clic para mas info'}
+          </div>
           </div>
         </div>
 
@@ -119,7 +132,7 @@ export default function Services() {
     <section id="services" className="py-24 bg-white">
       <style>{`
         @media (hover: hover) {
-          .group:hover > div {
+          #services .group:hover > div {
             transform: rotateY(180deg) !important;
           }
         }
@@ -136,10 +149,11 @@ export default function Services() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {servicesConfig.map(({ icon, titleKey, descKey, itemKeys }) => (
+          {servicesConfig.map(({ icon, img, titleKey, descKey, itemKeys }) => (
             <FlipCard
               key={titleKey}
               icon={icon}
+              img={img}
               titleKey={titleKey}
               descKey={descKey}
               itemKeys={itemKeys}

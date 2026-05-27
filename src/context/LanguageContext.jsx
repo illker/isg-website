@@ -40,11 +40,11 @@ const translations = {
   navCta: { en: 'Get Free Estimate', es: 'Presupuesto Gratis' },
 
   // Hero
-  heroOverline: { en: 'Protect What Matters Most', es: 'Proteja Lo Que Mas Importa' },
-  heroTitleWhite: { en: 'Protect Your Home With', es: 'Proteja Su Hogar Con' },
-  heroTitleBlue: { en: 'Reliable Gutter Solutions', es: 'Soluciones De Canaletas Confiables' },
-  heroTitle: { en: 'Protect Your Home with Reliable Gutter Solutions', es: 'Proteja Su Hogar con Soluciones de Canaletas Confiables' },
-  heroSubtitle: { en: 'Installation, repair and cleaning services you can trust.', es: 'Servicios de instalacion, reparacion y limpieza en los que puede confiar.' },
+  heroOverline: { en: 'South Florida Gutter & Exterior Experts', es: 'Expertos en Canaletas y Exteriores del Sur de Florida' },
+  heroTitleWhite: { en: 'Protecting Your Property with', es: 'Protegiendo Su Propiedad con' },
+  heroTitleBlue: { en: 'Quality & Professionalism', es: 'Calidad y Profesionalismo' },
+  heroTitle: { en: 'Protecting Your Property with Quality & Professionalism', es: 'Protegiendo Su Propiedad con Calidad y Profesionalismo' },
+  heroSubtitle: { en: 'At Integral Solutions Gutters, we specialize in seamless gutter installation, gutter repairs, professional cleaning, and exterior maintenance services throughout South Florida. Our commitment is to provide reliable service, quality workmanship, and clean professional finishes that help protect and enhance your property. Whether residential or commercial, our team works with dedication, attention to detail, and customer satisfaction as our top priority.', es: 'En Integral Solutions Gutters, nos especializamos en instalacion de canaletas sin costuras, reparaciones, limpieza profesional y servicios de mantenimiento exterior en todo el Sur de Florida. Nuestro compromiso es brindar servicio confiable, mano de obra de calidad y acabados profesionales limpios que ayuden a proteger y mejorar su propiedad. Ya sea residencial o comercial, nuestro equipo trabaja con dedicacion, atencion al detalle y la satisfaccion del cliente como nuestra maxima prioridad.' },
   heroCta: { en: 'Get Free Estimate', es: 'Presupuesto Gratis' },
   heroCall: { en: 'Call Now', es: 'Llame Ahora' },
   heroTrust1: { en: 'Free Estimates', es: 'Presupuestos Gratis' },
@@ -129,13 +129,37 @@ const translations = {
   formSubmit: { en: 'Get My Free Quote', es: 'Obtener Mi Presupuesto' },
   formPrivacy: { en: 'We respect your privacy. Your information will not be shared.', es: 'Respetamos su privacidad. Su informacion no sera compartida.' },
 
+  // About Us
+  aboutUsTitle: { en: 'About Us', es: 'Sobre Nosotros' },
+  aboutUsText: { en: 'Integral Solutions Gutters is a South Florida company dedicated to providing professional gutter installation, gutter cleaning, repairs, and exterior maintenance services for residential and commercial properties. We take pride in delivering dependable service, high-quality materials, and professional workmanship on every project. Our goal is to help protect properties from water damage while improving curb appeal and maintaining clean, efficient drainage systems. With attention to detail and commitment to customer satisfaction, we strive to build long-term relationships with every client we serve.', es: 'Integral Solutions Gutters es una empresa del Sur de Florida dedicada a brindar servicios profesionales de instalacion de canaletas, limpieza, reparaciones y mantenimiento exterior para propiedades residenciales y comerciales. Nos enorgullecemos de ofrecer servicio confiable, materiales de alta calidad y mano de obra profesional en cada proyecto. Nuestro objetivo es ayudar a proteger las propiedades de danos por agua mientras mejoramos la apariencia y mantenemos sistemas de drenaje limpios y eficientes. Con atencion al detalle y compromiso con la satisfaccion del cliente, nos esforzamos por construir relaciones a largo plazo con cada cliente que servimos.' },
+  missionTitle: { en: 'Our Mission', es: 'Nuestra Mision' },
+  missionText: { en: 'Our mission is to provide professional, reliable, and high-quality gutter and exterior maintenance services that protect and enhance our clients\' properties while delivering exceptional customer service and dependable results.', es: 'Nuestra mision es brindar servicios profesionales, confiables y de alta calidad de canaletas y mantenimiento exterior que protejan y mejoren las propiedades de nuestros clientes, ofreciendo un servicio excepcional y resultados confiables.' },
+  visionTitle: { en: 'Our Vision', es: 'Nuestra Vision' },
+  visionText: { en: 'Our vision is to become one of the most trusted gutter and exterior service companies in South Florida by consistently providing quality workmanship, professionalism, and customer satisfaction.', es: 'Nuestra vision es convertirnos en una de las empresas de servicios de canaletas y exteriores mas confiables del Sur de Florida al brindar consistentemente mano de obra de calidad, profesionalismo y satisfaccion del cliente.' },
+
   // Footer
   footerDesc: { en: 'Professional gutter solutions that protect your home and prevent costly damage.', es: 'Soluciones profesionales de canaletas que protegen su hogar y previenen danos costosos.' },
   footerQuickLinks: { en: 'Quick Links', es: 'Enlaces Rapidos' },
   footerContact: { en: 'Contact Information', es: 'Informacion de Contacto' },
-  footerLocation: { en: 'Serving Florida, USA', es: 'Sirviendo Florida, USA' },
+  footerLocation: { en: 'Serving South Florida', es: 'Sirviendo el Sur de Florida' },
   footerSocial: { en: 'Follow us on social media', es: 'Siguenos en redes sociales' },
   footerCopyright: { en: '\u00A9 2026 Integral Solutions Gutters. All Rights Reserved.', es: '\u00A9 2026 Integral Solutions Gutters. Todos los Derechos Reservados.' },
+
+  // Gallery
+  galTitle: { en: 'Our Work', es: 'Nuestro Trabajo' },
+  galSubtitle: { en: 'Browse our portfolio of completed gutter projects across South Florida.', es: 'Explore nuestro portafolio de proyectos de canaletas completados en el sur de Florida.' },
+  galCta: { en: 'Get a Free Estimate for Your Home', es: 'Obtenga un Presupuesto Gratis para Su Hogar' },
+  galCatAll: { en: 'All', es: 'Todos' },
+  galCatInstall: { en: 'Installation', es: 'Instalacion' },
+  galCatGuard: { en: 'Leaf Guard', es: 'Protectores' },
+  galCatClean: { en: 'Cleaning', es: 'Limpieza' },
+  galCatPremium: { en: 'Premium', es: 'Premium' },
+  galLabelKStyle: { en: 'K-Style Gutters', es: 'Canaletas Estilo K' },
+  galLabelHalfRound: { en: 'Half Round Gutters', es: 'Canaletas Semicirculares' },
+  galLabelSquare: { en: 'European Square Gutters', es: 'Canaletas Cuadradas Europeas' },
+  galLabelGuard: { en: 'Leaf Guard', es: 'Protector de Hojas' },
+  galLabelClean: { en: 'Gutter Cleaning', es: 'Limpieza de Canaletas' },
+  galLabelCopper: { en: 'Copper Gutters', es: 'Canaletas de Cobre' },
 
   // Mobile Nav
   mobileHome: { en: 'Home', es: 'Inicio' },
