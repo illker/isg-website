@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
-import bg1 from '../assets/isg-bg1.png'
-import bg2 from '../assets/isg-bg2.png'
-import bg3 from '../assets/isg-bg3.png'
-import bg4 from '../assets/isg-bg4.png'
-import bg5 from '../assets/isg-bg5.png'
+import bg1 from '../assets/isg-bg1.webp'
+import bg2 from '../assets/isg-bg2.webp'
+import bg3 from '../assets/isg-bg3.webp'
+import bg4 from '../assets/isg-bg4.webp'
+import bg5 from '../assets/isg-bg5.webp'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -35,7 +35,7 @@ export default function Hero() {
   }, [paused, next])
 
   return (
-    <header id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <header id="home" className="relative min-h-screen flex items-center pt-24 pb-20 md:pb-16 overflow-hidden">
       {/* Background Slideshow */}
       <div
         className="absolute inset-0 z-0"
@@ -56,14 +56,14 @@ export default function Hero() {
         {/* Prev / Next */}
         <button
           onClick={prev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-colors"
+          className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 items-center justify-center text-white transition-colors"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={next}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-colors"
+          className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 items-center justify-center text-white transition-colors"
           aria-label="Next slide"
         >
           <ChevronRight className="w-5 h-5" />
@@ -86,23 +86,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-8 xl:px-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-8 sm:px-10 xl:px-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left column */}
           <div>
-            <p className="text-xs font-bold text-white/70 uppercase tracking-widest mb-4">
+            <p className="text-xs font-bold text-white/70 uppercase tracking-widest mb-5">
               {t('heroOverline')}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black font-headline leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-black font-headline leading-[1.15] mb-6">
               <span className="text-white block">{t('heroTitleWhite')}</span>
               <span className="text-[#3BA8DF] block">{t('heroTitleBlue')}</span>
             </h1>
-            <p className="text-base text-white/80 mb-8 leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-white/80 mb-8 leading-relaxed max-w-xl">
               {t('heroSubtitle')}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-3 sm:gap-4 mb-10">
               <a href="#contact">
                 <Button
                   size="lg"
@@ -125,7 +125,7 @@ export default function Hero() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-4 sm:gap-6">
               {[
                 { icon: BadgeCheck, key: 'heroTrust1' },
                 { icon: Zap, key: 'heroTrust2' },

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { ClipboardList, Shield, Wrench, Droplets, Users, Hammer, ShieldCheck, Check, ArrowRight } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import imgInstall from '../assets/gutters 6 pulgadas/ChatGPT Image 26 may 2026, 10_18_20.png'
-import imgGuard from '../assets/Leaf guard/ChatGPT Image 26 may 2026, 10_58_11.png'
-import imgRepair from '../assets/Cooper gutters/07.png'
-import imgClean from '../assets/Limpieza de gutters/ChatGPT Image 26 may 2026, 11_17_52.png'
+import imgInstall from '../assets/gutters 6 pulgadas/ChatGPT Image 26 may 2026, 10_18_20.webp'
+import imgGuard from '../assets/Leaf guard/ChatGPT Image 26 may 2026, 10_58_11.webp'
+import imgRepair from '../assets/Cooper gutters/07.webp'
+import imgClean from '../assets/Limpieza de gutters/ChatGPT Image 26 may 2026, 11_17_52.webp'
 
 const servicesConfig = [
   {
